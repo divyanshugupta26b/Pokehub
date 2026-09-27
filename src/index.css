@@ -1,0 +1,154 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Brand Tokens */
+  --brand-neutral: #0b0f19;
+  --brand-primary: #ee1515;
+  --brand-secondary: #facc15;
+  --brand-tertiary: #06b6d4;
+
+  /* Surfaces */
+  --surface-bg: #0f131d;
+  --surface-dim: #0f131d;
+  --surface-bright: #353944;
+  --surface-container-lowest: #0a0e18;
+  --surface-container-low: #171b26;
+  --surface-container: #1c1f2a;
+  --surface-container-high: #262a35;
+  --surface-container-highest: #313540;
+
+  /* Text & Outlines */
+  --on-surface: #dfe2f1;
+  --on-surface-variant: #e9bcb6;
+  --outline: #af8782;
+  --outline-variant: #5e3f3a;
+
+  /* Primary */
+  --primary: #ffb4a9;
+  --on-primary: #690002;
+  --primary-container: #ff5544;
+
+  /* Secondary */
+  --secondary: #ffe083;
+  --on-secondary: #3c2f00;
+  --secondary-container: #eec200;
+
+  /* Tertiary */
+  --tertiary: #4cd7f6;
+  --on-tertiary: #003640;
+  --tertiary-container: #009eb9;
+
+  /* Elements */
+  --element-fire: #ef4444;
+  --element-grass: #10b981;
+  --element-electric: #facc15;
+  --element-water: #06b6d4;
+
+  /* Typography */
+  --font-display: 'Sora', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+@layer base {
+  html, body {
+    background-color: #0b0f19;
+    color: #dfe2f1;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Sora', sans-serif;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0e18;
+}
+::-webkit-scrollbar-thumb {
+  background: #262a35;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #353944;
+}
+
+/* Glassmorphism Levels from DESIGN.md */
+.glass-level-1 {
+  background-color: rgba(19, 27, 46, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-level-2 {
+  background-color: rgba(30, 41, 59, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.glass-level-3 {
+  background-color: rgba(15, 23, 42, 0.92);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.65);
+}
+
+/* Tactile Button Feedback */
+.tactile-button {
+  transition: transform 0.12s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.12s ease;
+  user-select: none;
+}
+.tactile-button:active {
+  transform: translateY(2px) scale(0.985);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.45);
+}
+
+/* Glow Bloons */
+.glow-primary {
+  box-shadow: 0 0 20px rgba(238, 21, 21, 0.45);
+}
+.glow-cyan {
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.4);
+}
+.glow-gold {
+  box-shadow: 0 0 20px rgba(250, 204, 21, 0.45);
+}
+.glow-emerald {
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+}
+
+/* Cyber Radar Grid Background */
+.cyber-grid-bg {
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Slanted HUD Clip Path */
+.clip-hud-corner {
+  clip-path: polygon(
+    0 0,
+    calc(100% - 12px) 0,
+    100% 12px,
+    100% 100%,
+    12px 100%,
+    0 calc(100% - 12px)
+  );
+}
+
+.clip-slanted-edge {
+  clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+}
